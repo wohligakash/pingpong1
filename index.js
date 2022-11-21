@@ -17,7 +17,7 @@ app.get('/ping', (req,res) => {
     res.json({ Response: "Pong" })
 })
 
-app.listen(4001,() => {
+app.listen(8070,() => {
     console.log("Server is started!!!")
     console.log("Deployed using kubernetes...")
 })

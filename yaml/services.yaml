@@ -11,8 +11,9 @@ status:
 spec:
   ports:
     - protocol: TCP
-      port: 7000
-      nodePort: 30625
+      port: 8070
+      targetPort: 8070
+      nodePort: 30060
   selector:
     app: pingpong-depl
   type: NodePort
