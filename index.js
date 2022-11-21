@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get('/', (req,res) => {
-    res.send("Hello ArgoCD")
+    res.send("Hello ArgoCD!!!")
 })
 
 app.get('/ping', (req,res) => {
