@@ -18,6 +18,5 @@ app.get('/ping', (req,res) => {
 })
 
 app.listen(8070,() => {
-    console.log("Server is started!!!")
-    console.log("This is a sample log")
+    console.log("Logs changed successfully!!!")
 })
