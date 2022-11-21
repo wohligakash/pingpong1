@@ -7,9 +7,9 @@ metadata:
     app: pingpong-depl
 spec:
   ports:
-    - port: 7000
-      nodePort: 30666
-      targetPort: 7000
+    - port: 4001
+      nodePort: 4001
+      targetPort: 4001
   selector:
     app: pingpong-depl
   type: NodePort
