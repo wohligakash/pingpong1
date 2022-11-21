@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pingpong-depl
+  namespace: argocd
+  resourceVersion: '50809'
+  labels:
+    app: pingpong-depl
+status:
+  loadBalancer: {}
+spec:
+  ports:
+    - protocol: TCP
+      port: 7000
+      targetPort: 7000
+      nodePort: 30625
+  selector:
+    app: pingpong-depl
+  clusterIP: 10.107.159.104
+  clusterIPs:
+    - 10.107.159.104
+  type: LoadBalancer
+  sessionAffinity: None
+  externalTrafficPolicy: Cluster
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  allocateLoadBalancerNodePorts: true
+  internalTrafficPolicy: Cluster
