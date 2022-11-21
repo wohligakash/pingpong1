@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: pingpong-serv
+  name: pingpong-depl
   namespace: argocd
   labels:
     app: pingpong-depl
