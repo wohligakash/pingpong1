@@ -2,14 +2,18 @@ apiVersion: v1
 kind: Service
 metadata:
   name: pingpong-depl
-  namespace: argocd
+  namespace: default
+  resourceVersion: '50809'
   labels:
     app: pingpong-depl
+status:
+  loadBalancer: {}
 spec:
   ports:
-    - port: 4001
-      nodePort: 4444
-      targetPort: 4001
+    - protocol: TCP
+      port: 7000
+      nodePort: 30625
   selector:
     app: pingpong-depl
   type: NodePort
+
