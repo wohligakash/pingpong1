@@ -7,4 +7,4 @@ metadata:
 spec:
   containers:
     - name: pingpong-cont
-      image: wohligakash/pingpong
+      image: wohligakash/pingpong:1
