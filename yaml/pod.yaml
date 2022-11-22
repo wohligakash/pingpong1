@@ -8,5 +8,4 @@ spec:
   containers:
     - name: pingpong-cont
       image: wohligakash/pingpong
-      resources:
-        {}
+      resources: {}
