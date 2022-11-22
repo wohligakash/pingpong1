@@ -6,5 +6,5 @@ metadata:
     app: pingpong
 spec:
   containers:
-    - name: pingpong-cont
-      image: wohligakash/pingpong:1
+  - name: pingpong-cont
+    image: wohligakash/pingpong:1
