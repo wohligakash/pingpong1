@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: pingpong-cont
-          image: wohligakash/pingpong:1
+          image: wohligakash/pingpong
           ports:
             - containerPort: 80
               protocol: TCP
