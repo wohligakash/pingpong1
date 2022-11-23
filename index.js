@@ -18,5 +18,5 @@ app.get('/ping', (req,res) => {
 })
 
 app.listen(8070,() => {
-    console.log("Logs changed successfully!!!")
+    console.log("This is log updated on 23112022-110045")
 })
