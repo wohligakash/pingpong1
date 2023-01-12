@@ -36,10 +36,10 @@ jobs:
                   docker build -t 109543047014.dkr.ecr.ap-south-1.amazonaws.com/helm-demo:$GITHUB_REF_NAME-$GITHUB_SHA . 
                   docker push 109543047888.dkr.ecr.ap-south-1.amazonaws.com/helm-demo:$GITHUB_REF_NAME-$GITHUB_SHA
                   git clone https://${{ secrets.AWS_GITHUB_USER }}@github.com/pingpong1
-                  git checkout main
                   cd helm-chart
-                  git config user.name "$GITHUB_ACTOR"
-                  git config user.email "$GITHUB_ACTOR@wohlig.com"
+                  git checkout main
+                  git config user.name "wohligakash"
+                  git config user.email "$akash.pawar@wohlig.com"
                   yq e '.image.repository = "109543048888.dkr.ecr.ap-south-1.amazonaws.com/helm-demo:$GITHUB_REF_NAME-$GITHUB_SHA"' -i values.yaml
                   git add .
                   git commit -m "updating newer image"
