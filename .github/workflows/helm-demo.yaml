@@ -19,7 +19,7 @@ jobs:
                   git config user.name "akash"
                   git config user.email "akash.pawar@wohlig.com"
                   yq e '.replicaCount = "5"' -i values.yaml
+                  git commit -m "updating newer image"
             - name: yq
               run: |      
-                  git commit -m "updating newer image"
                   git push --set-upstream origin main
