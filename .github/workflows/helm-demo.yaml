@@ -12,10 +12,12 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Build the Docker image
+            - name: Git clone
               run: |
                   git clone https://github.com/Akashpawar11/pingpong1.git
                   cd pingpong1/helm-chart
+            - name: yq
+              run: |      
                   git config user.name "wohligakash"
                   git config user.email "akash.pawar@wohlig.com"
                   yq e '.replicaCount = "5"' -i values.yaml
