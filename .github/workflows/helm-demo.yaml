@@ -21,6 +21,4 @@ jobs:
                   yq e '.replicaCount = "5"' -i values.yaml
                   git add .
                   git commit -m "updating newer image"
-            - name: yq
-              run: |      
-                  git push --set-upstream origin main
+                  git push origin main
