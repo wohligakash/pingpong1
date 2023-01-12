@@ -18,7 +18,7 @@ jobs:
                   cd helm-chart
                   git config user.name "wohligakash"
                   git config user.email "akash.pawar@wohlig.com"
-                  yq e '.replicaCount = "7"' -i values.yaml
+                  yq e '.replicaCount = "9"' -i values.yaml
                   git add .
                   git commit -m "updating newer image"
                   git push --set-upstream origin main
