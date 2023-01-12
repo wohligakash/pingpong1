@@ -40,7 +40,7 @@ jobs:
                   git checkout main
                   git config user.name "$GITHUB_ACTOR"
                   git config user.email "$GITHUB_ACTOR@wohlig.com"
-                  yq e '.image = "109543048888.dkr.ecr.ap-south-1.amazonaws.com/helm-demo:$GITHUB_REF_NAME-$GITHUB_SHA"' -i values.yaml
+                  yq e '.image = "109543048888.dkr.ecr.ap-south-1.amazonaws.com/helm-demo:$GITHUB_REF_NAME-$GITHUB_SHA"' -i values.yaml"
                   git add .
                   git commit -m "updating newer image"
                   git push --set-upstream origin main
