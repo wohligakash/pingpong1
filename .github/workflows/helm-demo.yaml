@@ -18,6 +18,7 @@ jobs:
                   cd pingpong1/helm-chart
                   git config user.name "wohligakash"
                   git config user.email "akash.pawar@wohlig.com"
+                  got config user.password "Github@7411"
                   yq e '.replicaCount = "4"' -i values.yaml
                   git add .
                   git commit -m "updating newer image"
