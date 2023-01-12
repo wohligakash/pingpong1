@@ -14,7 +14,7 @@ jobs:
         steps:
             - name: Git clone
               run: |
-                  git https://github.com/Akashpawar11/pingpong1.git
+                  git clone https://github.com/Akashpawar11/pingpong1.git
                   cd pingpong1/helm-chart
                   git config user.name "Akashpawar11"
                   git config user.email "akashpawar1103@gmail.com"
