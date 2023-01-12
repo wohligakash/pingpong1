@@ -15,8 +15,8 @@ jobs:
             - name: Build the Docker image
               run: |
                   git clone https://github.com/Akashpawar11/pingpong1
-                  cd helm-chart
                   git checkout main
+                  cd helm-chart
                   git config user.name "wohligakash"
                   git config user.email "akash.pawar@wohlig.com"
                   yq e '.replicaCount = "6"' -i values.yaml
