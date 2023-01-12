@@ -22,4 +22,4 @@ jobs:
                   yq e '.replicaCount = "4"' -i values.yaml
                   git add .
                   git commit -m "updating newer image"
-                  git push origin main
+                  git push main main
