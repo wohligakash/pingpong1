@@ -20,6 +20,3 @@ jobs:
                   git config user.email "akash.pawar@wohlig.com"
                   git config user.password "Github@7411"
                   yq e '.replicaCount = "4"' -i values.yaml
-                  git add .
-                  git commit -m "updating newer image"
-                  git push origin main
