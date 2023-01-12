@@ -39,7 +39,7 @@ jobs:
                   cd helm-chart
                   git checkout main
                   git config user.name "wohligakash"
-                  git config user.email "$akash.pawar@wohlig.com"
+                  git config user.email "akash.pawar@wohlig.com"
                   yq e '.image.repository = "109543048888.dkr.ecr.ap-south-1.amazonaws.com/helm-demo:$GITHUB_REF_NAME-$GITHUB_SHA"' -i values.yaml
                   git add .
                   git commit -m "updating newer image"
