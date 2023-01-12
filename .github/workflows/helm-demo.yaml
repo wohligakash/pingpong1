@@ -18,7 +18,6 @@ jobs:
                   cd pingpong1/helm-chart
                   git config user.name "wohligakash"
                   git config user.email "akash.pawar@wohlig.com"
-                  brew install yq
                   yq e '.replicaCount = "9"' -i values.yaml
                   git add .
                   git commit -m "updating newer image"
