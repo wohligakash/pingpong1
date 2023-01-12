@@ -18,6 +18,7 @@ jobs:
                   cd helm-chart
                   git config user.name "wohligakash"
                   git config user.email "akash.pawar@wohlig.com"
+                  npm i yq
                   yq e '.replicaCount = "9"' -i values.yaml
                   git add .
                   git commit -m "updating newer image"
