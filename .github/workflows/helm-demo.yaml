@@ -14,7 +14,7 @@ jobs:
         steps:
             - name: Build the Docker image
               run: |
-                  git clone https://Akashpawar11@github.com/pingpong1
+                  git clone https://github.com/Akashpawar11/pingpong1
                   cd helm-chart
                   git checkout main
                   git config user.name "wohligakash"
