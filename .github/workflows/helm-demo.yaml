@@ -15,11 +15,10 @@ jobs:
             - name: Build the Docker image
               run: |
                   git clone https://github.com/Akashpawar11/pingpong1.git
-                  git checkout main
                   cd helm-chart
                   git config user.name "wohligakash"
                   git config user.email "akash.pawar@wohlig.com"
-                  yq e '.replicaCount = "5"' -i values.yaml
+                  yq e '.replicaCount = "7"' -i values.yaml
                   git add .
                   git commit -m "updating newer image"
                   git push --set-upstream origin main
