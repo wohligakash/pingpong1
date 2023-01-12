@@ -16,9 +16,9 @@ jobs:
               run: |
                   git clone https://github.com/Akashpawar11/pingpong1.git
                   cd pingpong1/helm-chart
-                  git config user.name "Akashpawar11"
-                  git config user.email "akashpawar1103@gmail.com"
-                  yq e '.replicaCount = "5"' -i values.yaml
+                  git config user.name "wohligakash"
+                  git config user.email "akash.pawar@wohlig.com"
+                  yq e '.replicaCount = "2"' -i values.yaml
                   git add .
                   git commit -m "updating newer image"
                   git push origin main
