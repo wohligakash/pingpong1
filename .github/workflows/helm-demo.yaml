@@ -1,4 +1,4 @@
-name: api-production
+name: helm-actions-testing
 
 on:
     push:
