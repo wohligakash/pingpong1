@@ -1,8 +1,6 @@
 name: api-production
 
 on:
-    # Trigger the workflow on push,
-    # but only for the production branch
     push:
         branches:
             - main
@@ -23,3 +21,11 @@ jobs:
                   git add .
                   git commit -m "updating newer image"
                   git push main main
+
+            - name: Install helm
+              run: |
+                  curl -LO https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz
+                  tar -zxvf helm-v3.8.0-linux-amd64.tar.gz
+                  mv linux-amd64/helm /usr/local/bin/helm
+                  helm version
+
