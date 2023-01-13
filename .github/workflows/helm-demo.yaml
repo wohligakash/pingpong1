@@ -16,7 +16,7 @@ jobs:
                   git config --global user.name "wohligakash"
                   git config --global user.email "akash.pawar@wohlig.com"
                   git config --global user.password "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"
-                  yq e '.replicaCount = "6"' -i pingpong1/helml-chart/values.yaml
+                  yq e '.replicaCount = "6"' -i .pingpong1/helml-chart/values.yaml
                   curl -LO https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz
                   tar -zxvf helm-v3.8.0-linux-amd64.tar.gz
                   mv linux-amd64/helm /usr/local/bin/helm
