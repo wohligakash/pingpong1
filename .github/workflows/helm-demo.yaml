@@ -26,4 +26,4 @@ jobs:
 
                   git add .
                   git commit -m "updating newer image"
-                  git push pingpong1 main
+                  git push https://github.com/Akashpawar11/pingpong1.git main
