@@ -16,12 +16,12 @@ jobs:
                   cd pingpong1
                   git config --global user.name "Akashpawar11"
                   git config --global user.email "akashpawar1103@gmail.com"
-                  yq e '.replicaCount = "6"' -i pingpong1/helm-chart/values.yaml
+                  yq e '.replicaCount = "6"' -i helm-chart/values.yaml
                   curl -LO https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz
                   tar -zxvf helm-v3.8.0-linux-amd64.tar.gz
                   mv linux-amd64/helm /usr/local/bin/helm
                   helm version
-                  helm template uat-env ./pingpong1/helm-chart > manifests.yaml
+                  helm template uat-env ./helm-chart > manifests.yaml
                   cat manifests.yaml
 
 
