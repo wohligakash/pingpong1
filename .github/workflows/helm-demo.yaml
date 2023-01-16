@@ -22,5 +22,5 @@ jobs:
                   mv linux-amd64/helm /usr/local/bin/helm
                   helm version
                   helm template uat-env ./helm-chart > manifests.yaml
-                  helm upgrade --install helm-demo ./helm-chart
+                  kubectl apply -f manifests.yaml
                   cat manifests.yaml
