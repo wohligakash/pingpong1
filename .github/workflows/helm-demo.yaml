@@ -15,6 +15,7 @@ jobs:
                   curl -LO https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz
                   tar -zxvf helm-v3.8.0-linux-amd64.tar.gz
                   mv linux-amd64/helm /usr/local/bin/helm
+                  helm version
 
             - name: Helm actions
               run: |
@@ -23,7 +24,8 @@ jobs:
                   git config --global user.name "wohligakash"
                   git config --global user.email "akash.pawar@wohlig.com"
                   yq e '.replicaCount = "6"' -i helm-chart/values.yaml
-
-                  helm version
                   helm template uat-env ./helm-chart > manifests.yaml
                   cat manifests.yaml
+                  git add .
+                  git commit -m "commit through pipeline"
+                  git push origin main
