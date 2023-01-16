@@ -23,6 +23,7 @@ jobs:
                   cd pingpong1
                   git config user.name "wohligakash"
                   git config user.email "akash.pawar@wohlig.com"
+                  git config user.password "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"
                   yq e '.replicaCount = "6"' -i helm-chart/values.yaml
                   helm template uat-env ./helm-chart > manifests.yaml
                   cat manifests.yaml
