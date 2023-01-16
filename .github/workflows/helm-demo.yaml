@@ -22,8 +22,5 @@ jobs:
                   mv linux-amd64/helm /usr/local/bin/helm
                   helm version
                   helm template uat-env ./helm-chart > manifests.yaml
+                  helm upgrade --install helm-demo ./helm-chart
                   cat manifests.yaml
-
-                  git add .
-                  git commit -m "updating newer image"
-                  git push origin main
