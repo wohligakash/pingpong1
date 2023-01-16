@@ -26,4 +26,4 @@ jobs:
 
                   git add .
                   git commit -m "updating newer image"
-                  git push git@github.com:Akashpawar11/pingpong1.git main
+                  git push origin main
