@@ -24,7 +24,5 @@ jobs:
                   helm template uat-env ./helm-chart > manifests.yaml
                   cat manifests.yaml
 
-
                   git add .
                   git commit -m "updating newer image"
-                  git push --set-upstream origin main
