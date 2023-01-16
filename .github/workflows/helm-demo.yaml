@@ -17,7 +17,7 @@ jobs:
                   mv linux-amd64/helm /usr/local/bin/helm
                   helm version
 
-            - name: Helm template and git-push
+            - name: Helm template and git--push
               run: |
                   git clone https://github.com/Akashpawar11/pingpong1.git
                   cd pingpong1
