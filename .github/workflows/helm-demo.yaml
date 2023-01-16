@@ -13,6 +13,7 @@ jobs:
             - name: Helm actions
               run: |
                   git clone https://github.com/Akashpawar11/pingpong1.git
+                  cd pingpong1
                   git config --global user.name "Akashpawar11"
                   git config --global user.email "akashpawar1103@gmail.com"
                   yq e '.replicaCount = "6"' -i pingpong1/helm-chart/values.yaml
