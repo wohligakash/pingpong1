@@ -14,8 +14,8 @@ jobs:
               run: |
                   git clone https://github.com/Akashpawar11/pingpong1.git
                   cd pingpong1
-                  git config --global user.name "Akashpawar11"
-                  git config --global user.email "akashpawar1103@gmail.com"
+                  git config --global user.name "wohligakash"
+                  git config --global user.email "akash.pawar@wohlig.com"
                   yq e '.replicaCount = "6"' -i helm-chart/values.yaml
                   curl -LO https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz
                   tar -zxvf helm-v3.8.0-linux-amd64.tar.gz
