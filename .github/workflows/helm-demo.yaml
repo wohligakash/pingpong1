@@ -26,4 +26,4 @@ jobs:
 
                   git add .
                   git commit -m "updating newer image"
-                  git push main main
+                  git push pingpong1 main
