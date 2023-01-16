@@ -28,4 +28,4 @@ jobs:
                   cat manifests.yaml
                   git add .
                   git commit -m "commit through pipeline"
-                  git push origin main
+                  git push https://Akashpawar11:Github@7411@github.com/Akashpawar11/pingpong.git main
