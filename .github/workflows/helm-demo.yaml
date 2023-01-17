@@ -24,7 +24,7 @@ jobs:
               run: |
                   git clone https://github.com/Akashpawar11/pingpong1.git
                   cd pingpong1
-                  yq e '.replicaCount = "5"' -i helm-chart/values.yaml
+                  yq e '.replicaCount = "2"' -i helm-chart/values.yaml
                   cat ./helm-chart/values.yaml
                   helm template uat-env ./helm-chart > manifests.yaml
                   cat manifests.yaml
