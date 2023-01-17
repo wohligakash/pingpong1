@@ -32,7 +32,7 @@ jobs:
                   cd pingpong-gitops
                   yq e '.image.tag = "${{ env.GITHUB_BRANCH }}"' -i helm-chart/values.yaml
                   helm template uat-env ./helm-chart > manifest-file/manifests.yaml
-                  cat manifests.yaml
+                  cat manifest-file/manifests.yaml                  
                   git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/Akashpawar11/pingpong-gitops.git
                   git config user.name "$GITHUB_ACTOR"
                   git config user.email "akash.pawar@wohlig.com"
