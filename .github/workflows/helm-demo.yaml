@@ -24,14 +24,14 @@ jobs:
               run: |
                   git clone https://github.com/Akashpawar11/pingpong1.git
                   cd pingpong1
-                  git config user.name "$GITHUB_ACTOR"
-                  git config user.email "akash.pawar@wohlig.com"
-                  git config user.name
-                  git config user.email
                   yq e '.replicaCount = "4"' -i helm-chart/values.yaml
                   cat ./helm-chart/values.yaml
                   helm template uat-env ./helm-chart > manifests.yaml
                   cat manifests.yaml
+                  git config user.name "$GITHUB_ACTOR"
+                  git config user.email "akash.pawar@wohlig.com"
+                  git config user.name
+                  git config user.email
                   git add .
                   git commit -m "commit through pipeline"
                   git push origin main
