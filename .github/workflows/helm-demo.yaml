@@ -23,7 +23,7 @@ jobs:
                   cd pingpong1
                   git config user.name "Akash Pawar"
                   git config user.email "akash.pawar@wohlig.com"
-                  yq e '.replicaCount = "5"' -i helm-chart/values.yaml
+                  yq e '.replicaCount = "6"' -i helm-chart/values.yaml
                   cat ./helm-chart/values.yaml
                   helm template uat-env ./helm-chart > manifests.yaml
                   cat manifests.yaml
