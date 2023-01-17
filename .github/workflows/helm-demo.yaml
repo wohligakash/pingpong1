@@ -28,8 +28,8 @@ jobs:
                   git clone https://github.com/Akashpawar11/pingpong-gitops.git
                   cd pingpong-gitops
                   yq e '.replicaCount = "9"' -i helm-chart/values.yaml
-                  helm template uat-env ./helm-chart > manifests.yaml
-                  cat manifests.yaml
+                  helm template uat-env ./helm-chart > helm-chart/manifests.yaml
+                  cat helm-chart/manifests.yaml
                   git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/Akashpawar11/pingpong-gitops.git
                   git config user.name "$GITHUB_ACTOR"
                   git config user.email "akash.pawar@wohlig.com"
