@@ -28,4 +28,3 @@ jobs:
                   cat manifests.yaml
                   git add .
                   git commit -m "commit through pipeline"
-                  git push --set-upstream origin main
