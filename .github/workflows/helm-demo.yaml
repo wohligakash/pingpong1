@@ -24,7 +24,7 @@ jobs:
               run: |
                   git clone https://github.com/Akashpawar11/pingpong1.git
                   cd pingpong1
-                  git config user.name "Akash Pawar"
+                  git config user.name "$GITHUB_ACTOR"
                   git config user.email "akash.pawar@wohlig.com"
                   git config user.name
                   git config user.email
