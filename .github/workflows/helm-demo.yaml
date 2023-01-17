@@ -21,7 +21,7 @@ jobs:
               run: |
                   git clone https://github.com/Akashpawar11/pingpong1.git
                   cd pingpong1
-                  git config user.name "wohligakash"
+                  git config user.name "Akash Pawar"
                   git config user.email "akash.pawar@wohlig.com"
                   yq e '.replicaCount = "3"' -i helm-chart/values.yaml
                   cat ./helm-chart/values.yaml
@@ -29,3 +29,4 @@ jobs:
                   cat manifests.yaml
                   git add .
                   git commit -m "commit through pipeline"
+                  git push origin main
