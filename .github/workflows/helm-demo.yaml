@@ -5,6 +5,9 @@ on:
         branches:
             - main
 
+env:
+    GITHUB_TOKEN: ${{ secrets.auth_token }}
+
 jobs:
     helm-actions-testing:
         runs-on: ubuntu-latest
@@ -28,6 +31,7 @@ jobs:
                   cat ./helm-chart/values.yaml
                   helm template uat-env ./helm-chart > manifests.yaml
                   cat manifests.yaml
+                  git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/Akashpawar11/pingpong1.git
                   git config user.name "$GITHUB_ACTOR"
                   git config user.email "akash.pawar@wohlig.com"
                   git config user.name
