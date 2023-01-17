@@ -25,11 +25,11 @@ jobs:
 
             - name: Helm template and git--push
               run: |
-                  git clone https://github.com/Akashpawar11/pingpong1.git
-                  cd pingpong1
+                  git clone https://github.com/Akashpawar11/pingpong-gitops.git
+                  cd pingpong-gitops
                   helm template uat-env ./helm-chart > manifests.yaml
                   cat manifests.yaml
-                  git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/Akashpawar11/pingpong1.git
+                  git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/Akashpawar11/pingpong-gitops.git
                   git config user.name "$GITHUB_ACTOR"
                   git config user.email "akash.pawar@wohlig.com"
                   git config user.name
