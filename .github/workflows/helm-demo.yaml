@@ -27,8 +27,6 @@ jobs:
               run: |
                   git clone https://github.com/Akashpawar11/pingpong1.git
                   cd pingpong1
-                  yq e '.replicaCount = "3"' -i helm-chart/values.yaml
-                  cat ./helm-chart/values.yaml
                   helm template uat-env ./helm-chart > manifests.yaml
                   cat manifests.yaml
                   git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/Akashpawar11/pingpong1.git
