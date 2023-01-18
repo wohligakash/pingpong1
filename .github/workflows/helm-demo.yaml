@@ -38,6 +38,7 @@ jobs:
                   docker push wohligakash/pingpong:$GITHUB_REF_NAME-$GITHUB_SHA
 
                   git clone https://github.com/Akashpawar11/pingpong-gitops.git
+                  
                   cd pingpong-gitops
                   
                   yq e '.image.tag = "${{ env.GITHUB_BRANCH }}"' -i helm-chart/values.yaml
