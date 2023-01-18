@@ -31,12 +31,13 @@ jobs:
                   mv linux-amd64/helm /usr/local/bin/helm
                   helm version
 
-
-            - name: Helm template and git--push
+            - name: Build the Docker image
               run: |
                   docker build -t wohligakash/pingpong:$GITHUB_REF_NAME-$GITHUB_SHA . 
                   docker push wohligakash/pingpong:$GITHUB_REF_NAME-$GITHUB_SHA
 
+            - name: Helm template and git--push
+              run: |
                   git clone https://github.com/Akashpawar11/pingpong-gitops.git                 
                   cd pingpong-gitops
                   
