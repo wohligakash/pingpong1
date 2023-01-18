@@ -13,6 +13,11 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+            - name: login to docker hub
+              uses: docker/login-action@v2
+              with:
+                username: ${{ secrets.DOCKERHUB_USERNAME }}  
+                password: ${{ secrets.DOCKERHUB_TOKEN }}
 
             - name: Checkout
               uses: actions/checkout@v2
@@ -26,18 +31,24 @@ jobs:
                   mv linux-amd64/helm /usr/local/bin/helm
                   helm version
 
+
             - name: Helm template and git--push
               run: |
+                  docker build -t wohligakash/pingpong:$GITHUB_REF_NAME-$GITHUB_SHA . 
+                  docker push wohligakash/pingpong:$GITHUB_REF_NAME-$GITHUB_SHA
+                  
                   git clone https://github.com/Akashpawar11/pingpong-gitops.git
+
                   cd pingpong-gitops
+                  
                   yq e '.image.tag = "${{ env.GITHUB_BRANCH }}"' -i helm-chart/values.yaml
                   helm template uat-env ./helm-chart > manifest-file/manifests.yaml
-                  cat manifest-file/manifests.yaml                  
+                  cat manifest-file/manifests.yaml    
+
                   git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/Akashpawar11/pingpong-gitops.git
                   git config user.name "$GITHUB_ACTOR"
                   git config user.email "akash.pawar@wohlig.com"
-                  git config user.name
-                  git config user.email
+
                   git add .
                   git commit -m "commit through pipeline"
                   git push origin main
