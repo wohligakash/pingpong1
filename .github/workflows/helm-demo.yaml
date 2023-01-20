@@ -41,7 +41,7 @@ jobs:
                   git clone https://github.com/Akashpawar11/pingpong-gitops.git                 
                   cd pingpong-gitops
                   
-                  yq e '.image.tag = "${{ env.GITHUB_BRANCH }}"' -i helm-chart/values.yaml
+                  yq e '.image = "wohligakash/pingpong:${{ env.GITHUB_BRANCH }}"' -i helm-chart/values.yaml
                   helm template uat-env ./helm-chart > manifest-file/manifests.yaml
                   cat manifest-file/manifests.yaml    
 
