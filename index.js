@@ -18,5 +18,5 @@ app.get('/ping', (req,res) => {
 })
 
 app.listen(8070,() => {
-    console.log("This is a Sample log ")
+    console.log("This is a log ")
 })
