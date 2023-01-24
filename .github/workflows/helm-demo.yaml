@@ -50,5 +50,5 @@ jobs:
                   git config user.email "akash.pawar@wohlig.com"
 
                   git add .
-                  git commit -m "commit through pipeline"
+                  git commit -m "Updating newer image"
                   git push origin main
