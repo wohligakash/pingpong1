@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get('/', (req,res) => {
-    res.send("Impossible - I-m-possible")
+    res.send("Proper Prior Planning Prevents Poor Performance")
 })
 
 app.get('/ping', (req,res) => {
