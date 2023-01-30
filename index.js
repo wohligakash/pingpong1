@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
 function calculateSum(a, b) {
     var sum = a + b;
     return sum;
-  }
+}
   
 var result = calculateSum(1, 4);
 console.log(result);
