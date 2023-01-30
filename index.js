@@ -14,7 +14,11 @@ function calculateSum(a, b) {
     return sum;
 }
   
+<<<<<<< HEAD
 var result = calculateSum(1, 4);
+=======
+var result = calculateSum(2, 3);
+>>>>>>> parent of 015590e (changes)
 console.log(result);
 
 app.get('/', (req,res) => {
