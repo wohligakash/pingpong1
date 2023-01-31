@@ -27,8 +27,8 @@ jobs:
                 max-allowed-issues: 2147483647
 
     helm-actions-testing:
-        runs-on: ubuntu-latest
         needs: Codacy Analysis
+        runs-on: ubuntu-latest
 
         steps:
             - name: Checkout code
