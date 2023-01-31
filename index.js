@@ -10,19 +10,13 @@ app.use(bodyParser.urlencoded({
 }));
 
 function calculateSum(a, b) {
- var sum = a + b;
-       return sum;
-}
-function calculateAdd(c, d) {
-   var addition = a + b + c;
-        return addition;
+var sum = a + b;
+    return sum;
 }
 
-var result = calculateSum(2, 3,5);
-   console.log(result);
-var res = calculateAdd(2, 3);
-cons ole.log(res);
-
+var result = calculateSum(2, 3);
+console.log(result);
+   
 app.get('/', (req,res) => {
     res.send("Proper Prior Planning Prevents Poor Performance")
 })
