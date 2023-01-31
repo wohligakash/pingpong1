@@ -27,7 +27,7 @@ jobs:
                 max-allowed-issues: 2147483647
           
             - name: login to docker hub
-              needs: Codacy Analysis CLI
+              need: Codacy Analysis CLI
               uses: docker/login-action@v2
               with:
                 username: ${{ secrets.DOCKERHUB_USERNAME }}  
