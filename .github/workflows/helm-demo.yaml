@@ -21,6 +21,7 @@ jobs:
 
     codacy-coverage-reporter:
       runs-on: ubuntu-latest
+      needs: codacy-analysis-cli
       name: codacy-coverage-reporter
       steps:
         - name: codacy-coverage-reporter-dl
@@ -36,7 +37,7 @@ jobs:
               
           # or
           # api-token: ${{ secrets.CODACY_API_TOKEN }}
-              coverage-reports: ./report.json
+              coverage-reports: report.json
           # or a comma-separated list for multiple reports
           # coverage-reports: <PATH_TO_REPORT>, <PATH_TO_REPORT>
 
