@@ -13,9 +13,15 @@ function calculateSum(a, b) {
  var sum = a + b;
     return sum;
 }
+function calculateAdd(c, d) {
+   var addition = a + b + c;
+    return addition;
+}
 
 var result = calculateSum(2, 3,5);
    console.log(result);
+var res = calculateAdd(2, 3);
+   console.log(res);
 
 app.get('/', (req,res) => {
     res.send("Proper Prior Planning Prevents Poor Performance")
