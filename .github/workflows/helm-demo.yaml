@@ -37,7 +37,7 @@ jobs:
               
           # or
           # api-token: ${{ secrets.CODACY_API_TOKEN }}
-              coverage-reports: report.json
+              coverage-reports: $GITHUB_WORKSPACE/report.json
           # or a comma-separated list for multiple reports
           # coverage-reports: <PATH_TO_REPORT>, <PATH_TO_REPORT>
 
