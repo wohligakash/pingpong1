@@ -9,20 +9,15 @@ env:
     GITHUB_TOKEN: ${{ secrets.auth_token }}
 
 jobs:
-    codacy-coverage-reporter:
-        runs-on: ubuntu-latest
-        name: codacy-coverage-reporter
-        steps:
-          - uses: actions/checkout@v2
-          - name: Run codacy-coverage-reporter
-            uses: codacy/codacy-coverage-reporter-action@v1
-            with:
-              project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          # or
-          # api-token: ${{ secrets.CODACY_API_TOKEN }}
-              coverage-reports: $GITHUB_WORKSPACE/codacy-report.json
-          # or a comma-separated list for multiple reports
-          # coverage-reports: <PATH_TO_REPORT>, <PATH_TO_REPORT>
+  codacy-analysis-cli:
+    name: Codacy Analysis CLI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@main
+
+      - name: Run Codacy Analysis CLI
+        uses: codacy/codacy-analysis-cli-action@master
 
     helm-actions-testing:
         runs-on: ubuntu-latest
