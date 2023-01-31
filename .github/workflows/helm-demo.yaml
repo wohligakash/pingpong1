@@ -16,7 +16,7 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@main
 
-            - name: Run Codacy Analysis CLI
+            - name: Codacy Analysis CLI
               uses: codacy/codacy-analysis-cli-action@master
               with:
                 tool: Codacy Analysis CLI
@@ -27,13 +27,12 @@ jobs:
                 max-allowed-issues: 2147483647
           
             - name: login to docker hub
+              needs: Codacy Analysis CLI
               uses: docker/login-action@v2
               with:
                 username: ${{ secrets.DOCKERHUB_USERNAME }}  
                 password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-            - name: Checkout
-              uses: actions/checkout@v2
             - name: Set env
               run: echo "GITHUB_BRANCH=$(echo $GITHUB_REF_NAME-$GITHUB_SHA)" >> $GITHUB_ENV
 
