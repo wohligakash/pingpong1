@@ -21,7 +21,7 @@ function calculateAdd(c, d) {
 var result = calculateSum(2, 3,5);
    console.log(result);
 var res = calculateAdd(2, 3);
-   console.log(res);
+cons ole.log(res);
 
 app.get('/', (req,res) => {
     res.send("Proper Prior Planning Prevents Poor Performance")
