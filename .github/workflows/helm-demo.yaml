@@ -9,23 +9,20 @@ env:
     GITHUB_TOKEN: ${{ secrets.auth_token }}
 
 jobs:
-    codacy-analysis:
-        name: Codacy Analysis CLI
+    codacy-coverage-reporter:
         runs-on: ubuntu-latest
-
+        name: codacy-coverage-reporter
         steps:
-          - name: Checkout code
-            uses: actions/checkout@main
-
-          - name: Run Codacy Analysis CLI
-            uses: codacy/codacy-analysis-cli-action@master
+          - uses: actions/checkout@v2
+          - name: Run codacy-coverage-reporter
+            uses: codacy/codacy-coverage-reporter-action@v1
             with:
-                tool: Blanket.js
-                project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+              project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           # or
           # api-token: ${{ secrets.CODACY_API_TOKEN }}
-                upload: true
-                max-allowed-issues: 2147483647
+              coverage-reports: <PATH_TO_REPORT>
+          # or a comma-separated list for multiple reports
+          # coverage-reports: <PATH_TO_REPORT>, <PATH_TO_REPORT>
 
     helm-actions-testing:
         runs-on: ubuntu-latest
