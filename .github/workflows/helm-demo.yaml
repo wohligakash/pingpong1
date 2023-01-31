@@ -9,19 +9,19 @@ env:
     GITHUB_TOKEN: ${{ secrets.auth_token }}
 
 jobs:
-  codacy-analysis-cli:
-    name: Codacy Analysis CLI
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@main
+    codacy-analysis-cli:
+        name: Codacy Analysis CLI
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@main
 
-      - name: Run Codacy Analysis CLI
-        uses: codacy/codacy-analysis-cli-action@master
+          - name: Run Codacy Analysis CLI
+            uses: codacy/codacy-analysis-cli-action@master
 
     helm-actions-testing:
         runs-on: ubuntu-latest
-        needs: codacy-coverage-reporter
+        needs: codacy-analysis-cli
 
         steps:
             - name: Checkout code
