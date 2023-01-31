@@ -9,16 +9,17 @@ env:
     GITHUB_TOKEN: ${{ secrets.auth_token }}
 
 jobs:
-    Codacy Analysis:
+    codacy-analysis:
+        name: Codacy Analysis CLI
         runs-on: ubuntu-latest
 
         steps:
-            - name: Checkout code
-              uses: actions/checkout@main
+          - name: Checkout code
+            uses: actions/checkout@main
 
-            - name: Codacy Analysis CLI
-              uses: codacy/codacy-analysis-cli-action@master
-              with:
+          - name: Run Codacy Analysis CLI
+            uses: codacy/codacy-analysis-cli-action@master
+            with:
                 tool: Codacy Analysis CLI
                 project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           # or
@@ -27,8 +28,8 @@ jobs:
                 max-allowed-issues: 2147483647
 
     helm-actions-testing:
-        needs: Codacy Analysis
         runs-on: ubuntu-latest
+        needs: codacy-analysis
 
         steps:
             - name: Checkout code
