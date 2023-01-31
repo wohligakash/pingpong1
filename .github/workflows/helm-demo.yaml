@@ -16,17 +16,8 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@main
 
-            - name: Run Codacy analysis
-              run: npx codacy-cl --no-color
-              id: codacy
-
-            - name: Check for success
-              if: steps.codacy.outcome == 'success'
-              run: echo "Codacy analysis succeeded"
-
-            - name: Check for failure
-              if: steps.codacy.outcome == 'failure'
-              run: echo "Codacy analysis failed"
+            - name: Run Codacy Analysis CLI
+              uses: codacy/codacy-analysis-cli-action@master
           
             - name: login to docker hub
               uses: docker/login-action@v2
