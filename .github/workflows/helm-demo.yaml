@@ -70,21 +70,3 @@ jobs:
                   git commit -m "Updating newer image"
                   git push origin main
 
-    update-jira-status:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Update Jira issue status
-      env:
-        JIRA_API_TOKEN: ${{ env.JIRA_API_TOKEN }}
-      run: |
-        # Authenticate to Jira API
-        curl -H "Authorization: Bearer $JIRA_API_TOKEN" -X PUT --data '{"fields":{"status":{"name":"Done"}}}' -H "Content-Type: application/json" https://playexch.atlassian.net/browse/DO-1240
-
-        # Check API response
-        response=$(curl -H "Authorization: Bearer $JIRA_API_TOKEN" https://playexch.atlassian.net/browse/DO-1240
-        echo "Jira API Response: $response"
-
