@@ -4,9 +4,14 @@ on:
     push:
         branches:
             - main
-
+            
+    pull_request:
+        branches:
+            - main
+      
 env:
     GITHUB_TOKEN: ${{ secrets.auth_token }}
+    JIRA_API_TOKEN: ATATT3xFfGF0Kh99hW58l_czIQIUNJwxaZDIIhdXMBvS8aE1sFKQHpT9_aVjIw9E_myjXCpkdb3ZQA12gxJJCxWN5_qRbr43JbE81EDgokBrelJl6TdYG7Xw7_F5O2BRib-udgfKzESwKkDUBiPBotrBI_KxaUv1lRMJNTb3n50ctEDiBEcxHBU=B0BF18C0
 
 jobs:
     codacy-analysis-cli:
@@ -18,14 +23,6 @@ jobs:
 
           - name: Run Codacy Analysis CLI
             uses: codacy/codacy-analysis-cli-action@master
-
-            with:
-              tool: ESLint
-              project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          # or
-          # api-token: ${{ secrets.CODACY_API_TOKEN }}
-              upload: true
-              max-allowed-issues: 2147483647
 
     helm-actions-testing:
         runs-on: ubuntu-latest
@@ -72,3 +69,22 @@ jobs:
                   git add .
                   git commit -m "Updating newer image"
                   git push origin main
+
+    update-jira-status:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Update Jira issue status
+      env:
+        JIRA_API_TOKEN: ${{ env.JIRA_API_TOKEN }}
+      run: |
+        # Authenticate to Jira API
+        curl -H "Authorization: Bearer $JIRA_API_TOKEN" -X PUT --data '{"fields":{"status":{"name":"Done"}}}' -H "Content-Type: application/json" https://playexch.atlassian.net/browse/DO-1240
+
+        # Check API response
+        response=$(curl -H "Authorization: Bearer $JIRA_API_TOKEN" https://playexch.atlassian.net/browse/DO-1240
+        echo "Jira API Response: $response"
+
